@@ -18,9 +18,9 @@ export async function createMerkleTree(accountPubkey: PublicKey, connection: Con
     console.log("merkleTree", merkleTree);
     const builder = await createTree(umi, {
         merkleTree,
-        maxDepth: 5,
-        maxBufferSize: 8,
-        canopyDepth: 2,
+        maxDepth: 14,
+        maxBufferSize: 64,
+        canopyDepth: 0,
         public: true,
     });
 
