@@ -6,6 +6,7 @@ import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import express, { Request, Response } from "express";
 import { createPostResponse, actionCorsMiddleware } from "@solana/actions";
 import { DEFAULT_SOL_ADDRESS } from "../constant";
+import { mplBubblegum } from "@metaplex-foundation/mpl-bubblegum";
 
 export function getActionsJson(req: Request, res: Response): void {
     res.json({
@@ -53,5 +54,6 @@ export function handleError(res: Response, err: unknown, status: number = 500): 
 export function createUmiInstance(keypair: Keypair): Umi {
     return createUmi(process.env.SOLANA_RPC_URL || 'https://api.devnet.solana.com')
       .use(mplTokenMetadata())
+      .use(mplBubblegum())
       .use(keypairIdentity(fromWeb3JsKeypair(keypair)));
 }

@@ -4,7 +4,6 @@ import { Connection, Keypair, PublicKey, Transaction, clusterApiUrl } from "@sol
 import { createPostResponse, actionCorsMiddleware } from "@solana/actions";
 import { getMintNFT, postMintNFT } from './actions/action-mintNFT';
 
-
 import { getMintNFTCollection, postMintNFTCollection } from './actions/action-mintNFTCollection';
 import { getCreateMerkleTree, postCreateMerkleTree } from './actions/action-create-merkle-tree';
 import { getActionsJson } from './utils/utils';
